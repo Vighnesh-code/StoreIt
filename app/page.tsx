@@ -3,8 +3,10 @@
 export default function Home() {
   return (
     <div className="min-h-screen w-screen">
-      <h1>StoreIt Initialization</h1>
-      <p>StoreIt - One Stop Solution for your storage needs</p>
+      <h1 className="text-4xl">StoreIt Initialization</h1>
+      <p className="text-2xl">
+        StoreIt - One Stop Solution for your storage needs
+      </p>
     </div>
   );
 }
