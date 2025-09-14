@@ -1,12 +1,9 @@
-// This is a basic Next.js page component using Tailwind CSS for styling.
-
 export default function Home() {
   return (
-    <div className="min-h-screen w-screen">
-      <h1 className="text-4xl">StoreIt Initialization</h1>
-      <p className="text-2xl">
-        StoreIt - One Stop Solution for your storage needs
-      </p>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-black">
+      <h1 className="text-3xl text-brand-100">
+        StoreIt - a one stop solution for your storage needs.
+      </h1>
     </div>
   );
 }

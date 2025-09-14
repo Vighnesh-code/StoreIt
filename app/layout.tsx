@@ -1,5 +1,3 @@
-// This is the layout.tsx file that wraps all pages in the app.
-
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
