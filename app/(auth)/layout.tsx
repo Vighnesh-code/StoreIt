@@ -1,7 +1,7 @@
 import Image from "next/image";
-import React from "react";
+import { ReactNode } from "react";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex min-h-screen">
       {/* Left Section */}
