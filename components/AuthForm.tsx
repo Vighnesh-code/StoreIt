@@ -97,6 +97,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
               </FormItem>
             )}
           />
+
           <Button
             type="submit"
             className="form-submit-button"
