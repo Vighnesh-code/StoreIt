@@ -3,6 +3,7 @@
 import { ID, Query } from "node-appwrite";
 import { createAdminClient } from "../appwrite";
 import { appwriteConfig } from "../appwrite/config";
+import { parseStringify } from "../utils";
 
 // Helper Function to get users by their email
 const getUserByEmail = async (email: string) => {
@@ -35,7 +36,7 @@ const sendEmailOTP = async ({ email }: { email: string }) => {
   }
 };
 
-const createAccount = async ({
+export const createAccount = async ({
   fullName,
   email,
 }: {
@@ -43,5 +44,23 @@ const createAccount = async ({
   email: string;
 }) => {
   const existingUser = await getUserByEmail(email);
-  const accountId = await sendEmailOTP(email);
+  const accountId = await sendEmailOTP({ email });
+  if (!accountId) throw new Error("Failed to send an OTP");
+
+  if (!existingUser) {
+    const { databases } = await createAdminClient();
+    await databases.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.usersCollectionId,
+      ID.unique(),
+      {
+        fullName,
+        email,
+        avatar:
+          "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+        accountId,
+      }
+    );
+  }
+  return parseStringify({ accountId });
 };
