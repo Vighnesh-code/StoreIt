@@ -25,7 +25,7 @@ const handleError = (error: unknown, message: string) => {
 
 // Helper function for sending OTPs
 const sendEmailOTP = async ({ email }: { email: string }) => {
-  const account = await createAdminClient();
+  const { account } = await createAdminClient();
 
   try {
     const session = await account.createEmailToken(ID.unique(), email);
