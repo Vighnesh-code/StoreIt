@@ -61,7 +61,7 @@ const OTPModal = ({
             />
           </AlertDialogTitle>
           <AlertDialogDescription className="subtitle-2 text-center text-light-100">
-            We have sent you a code to your{" "}
+            We have sent you a code to your
             <span className="pl-1 text-brand">{email}</span>.
           </AlertDialogDescription>
         </AlertDialogHeader>
