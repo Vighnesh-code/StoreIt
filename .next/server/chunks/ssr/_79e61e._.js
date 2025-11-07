@@ -18,12 +18,12 @@ function Home() {
             children: "StoreIt - The only storage solution you need."
         }, void 0, false, {
             fileName: "[project]/app/page.tsx",
-            lineNumber: 6,
+            lineNumber: 4,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 5,
+        lineNumber: 3,
         columnNumber: 5
     }, this);
 }

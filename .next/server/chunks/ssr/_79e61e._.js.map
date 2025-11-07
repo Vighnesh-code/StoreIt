@@ -2,7 +2,7 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\n\nexport default function Home() {\n  return (\n    <div className=\"h-screen flex justify-center items-center\">\n      <h1 className=\"text-3xl font-bold\">\n        StoreIt - The only storage solution you need.\n      </h1>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAG,WAAU;sBAAqB;;;;;;;;;;;AAKzC"}},
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return (\n    <div className=\"h-screen flex justify-center items-center\">\n      <h1 className=\"text-3xl font-bold\">\n        StoreIt - The only storage solution you need.\n      </h1>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAG,WAAU;sBAAqB;;;;;;;;;;;AAKzC"}},
     {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
     {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
     {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},

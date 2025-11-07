@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 11, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 17, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/(auth)/sign-up/page.tsx"],"sourcesContent":["import AuthForm from \"@/components/AuthForm\";\nimport React from \"react\";\n\nconst SignUp = () => <AuthForm type=\"sign-up\" />;\n\nexport default SignUp;\n"],"names":[],"mappings":";;;;AAAA;;;AAGA,MAAM,SAAS,kBAAM,8OAAC,uHAAA,CAAA,UAAQ;QAAC,MAAK;;;;;;uCAErB"}},
+    {"offset": {"line": 32, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
