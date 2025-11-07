@@ -617,6 +617,14 @@ body {
   margin-bottom: 4rem;
 }
 
+.ml-2 {
+  margin-left: .5rem;
+}
+
+.ml-1 {
+  margin-left: .25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -679,6 +687,16 @@ body {
 
 .flex-1 {
   flex: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: 1s linear infinite spin;
 }
 
 .flex-col {
@@ -874,6 +892,16 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-light-100 {
+  --tw-text-opacity: 1;
+  color: rgb(51 63 78 / var(--tw-text-opacity));
+}
+
+.text-brand {
+  --tw-text-opacity: 1;
+  color: rgb(250 114 117 / var(--tw-text-opacity));
+}
+
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
@@ -935,6 +963,12 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+}
+
+.body-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .button {
@@ -1076,6 +1110,24 @@ body {
 .form-submit-button:hover {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(234 99 101 / var(--tw-bg-opacity)) !important;
+}
+
+.error-message {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: fit-content !important;
+  border-radius: .75rem !important;
+  background-color: #b800000d !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  text-align: center !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(184 0 0 / var(--tw-text-opacity)) !important;
 }
 
 .file\:border-0::file-selector-button {
