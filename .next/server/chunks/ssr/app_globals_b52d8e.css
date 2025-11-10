@@ -514,6 +514,10 @@ body {
   height: 100vh;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .max-h-\[800px\] {
   max-height: 800px;
 }
@@ -915,6 +919,11 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-light-200 {
+  --tw-text-opacity: 1;
+  color: rgb(163 178 199 / var(--tw-text-opacity));
+}
+
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
@@ -1046,6 +1055,12 @@ body {
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
+}
+
+.h5 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
 }
 
 .subtitle-2 {
@@ -1323,6 +1338,78 @@ body {
     padding-right: 2.25rem !important;
     padding-top: 2.5rem !important;
     padding-bottom: 2.5rem !important;
+  }
+}
+
+.empty-list {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 2.5rem !important;
+  text-align: center !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(163 178 199 / var(--tw-text-opacity)) !important;
+}
+
+.page-container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+  width: 100% !important;
+  max-width: 80rem !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 2rem !important;
+}
+
+.total-size-section {
+  margin-top: .5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+@media (width >= 640px) {
+  .total-size-section {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+}
+
+.file-list {
+  display: grid !important;
+  width: 100% !important;
+  gap: 1.5rem !important;
+}
+
+@media (width >= 640px) {
+  .file-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (width >= 1024px) {
+  .file-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (width >= 1280px) {
+  .file-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+.sort-container {
+  margin-top: 1.25rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+@media (width >= 640px) {
+  .sort-container {
+    margin-top: 0 !important;
+    gap: .75rem !important;
   }
 }
 
@@ -2082,6 +2169,10 @@ body {
 @media (width >= 640px) {
   .sm\:mt-0 {
     margin-top: 0;
+  }
+
+  .sm\:block {
+    display: block;
   }
 
   .sm\:hidden {
