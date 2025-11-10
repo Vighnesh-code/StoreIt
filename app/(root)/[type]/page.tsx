@@ -26,7 +26,6 @@ const page = async ({ params }: SearchParamProps) => {
         </div>
       </section>
 
-      {/* Render the file types */}
       {files.total > 0 ? (
         <section className="file-list">
           {files.documents.map((file: Models.Document) => (

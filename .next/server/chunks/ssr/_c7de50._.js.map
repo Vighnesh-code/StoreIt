@@ -1,9 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/components/Sidebar.tsx"],"sourcesContent":["import React from \"react\";\n\nconst Sidebar = () => {\n  return <div>Sidebar</div>;\n};\n\nexport default Sidebar;\n"],"names":[],"mappings":";;;;;AAEA,MAAM,UAAU;IACd,qBAAO,8OAAC;kBAAI;;;;;;AACd;uCAEe"}},
-    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
-    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/(root)/layout.tsx"],"sourcesContent":["import MobileNavigation from \"@/components/MobileNavigation\";\nimport Sidebar from \"@/components/Sidebar\";\nimport React from \"react\";\n\nconst layout = ({ children }: { children: React.ReactNode }) => {\n  return (\n    <main className=\"flex h-screen\">\n      <Sidebar />\n      <section className=\"flex h-full flex-1 flex-col\">\n        <MobileNavigation /> Header\n        <div className=\"main-content\">{children}</div>\n      </section>\n    </main>\n  );\n};\n\nexport default layout;\n"],"names":[],"mappings":";;;;AAAA;AACA;;;;AAGA,MAAM,SAAS,CAAC,EAAE,QAAQ,EAAiC;IACzD,qBACE,8OAAC;QAAK,WAAU;;0BACd,8OAAC,sHAAA,CAAA,UAAO;;;;;0BACR,8OAAC;gBAAQ,WAAU;;kCACjB,8OAAC,+HAAA,CAAA,UAAgB;;;;;oBAAG;kCACpB,8OAAC;wBAAI,WAAU;kCAAgB;;;;;;;;;;;;;;;;;;AAIvC;uCAEe"}},
-    {"offset": {"line": 77, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

@@ -216,10 +216,10 @@ const getFileIcon = (extension, type)=>{
     }
 };
 const constructFileUrl = (bucketFileId)=>{
-    return `${"TURBOPACK compile-time value", "https://fra.cloud.appwrite.io/v1"}/storage/buckets/${process.env.NEXT_PUBLIC_APPWRITE_BUCKET}/files/${bucketFileId}/view?project=${process.env.NEXT_PUBLIC_APPWRITE_PROJECT}`;
+    return `${"TURBOPACK compile-time value", "https://fra.cloud.appwrite.io/v1"}/storage/buckets/${"TURBOPACK compile-time value", "68c8eacb002e2b091d8c"}/files/${bucketFileId}/view?project=${"TURBOPACK compile-time value", "68c6f98e001be1174d64"}`;
 };
 const constructDownloadUrl = (bucketFileId)=>{
-    return `${"TURBOPACK compile-time value", "https://fra.cloud.appwrite.io/v1"}/storage/buckets/${process.env.NEXT_PUBLIC_APPWRITE_BUCKET}/files/${bucketFileId}/download?project=${process.env.NEXT_PUBLIC_APPWRITE_PROJECT}`;
+    return `${"TURBOPACK compile-time value", "https://fra.cloud.appwrite.io/v1"}/storage/buckets/${"TURBOPACK compile-time value", "68c8eacb002e2b091d8c"}/files/${bucketFileId}/download?project=${"TURBOPACK compile-time value", "68c6f98e001be1174d64"}`;
 };
 const getUsageSummary = (totalSpace)=>{
     return [
