@@ -1865,6 +1865,42 @@ body {
   }
 }
 
+.modal-cancel-button {
+  height: 52px !important;
+  flex: 1 !important;
+  border-radius: 9999px !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(51 63 78 / var(--tw-text-opacity)) !important;
+}
+
+.modal-cancel-button:hover {
+  background-color: #0000 !important;
+}
+
+.modal-submit-button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  height: 52px !important;
+  width: 100% !important;
+  flex: 1 !important;
+  border-radius: 9999px !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(250 114 117 / var(--tw-bg-opacity)) !important;
+  transition-property: all !important;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1) !important;
+  transition-duration: .15s !important;
+}
+
+.modal-submit-button:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(234 99 101 / var(--tw-bg-opacity)) !important;
+}
+
 .auth-form {
   display: flex !important;
   max-height: 800px !important;
@@ -2730,6 +2766,10 @@ body {
 }
 
 @media (width >= 768px) {
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:text-sm {
     font-size: .875rem;
     line-height: 1.25rem;
