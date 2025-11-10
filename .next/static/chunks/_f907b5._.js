@@ -6,18 +6,278 @@
 var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
 {
 __turbopack_esm__({
+    "calculateAngle": (()=>calculateAngle),
+    "calculatePercentage": (()=>calculatePercentage),
     "cn": (()=>cn),
+    "constructDownloadUrl": (()=>constructDownloadUrl),
+    "constructFileUrl": (()=>constructFileUrl),
+    "convertFileSize": (()=>convertFileSize),
+    "convertFileToUrl": (()=>convertFileToUrl),
+    "formatDateTime": (()=>formatDateTime),
+    "getFileIcon": (()=>getFileIcon),
+    "getFileType": (()=>getFileType),
+    "getFileTypesParams": (()=>getFileTypesParams),
+    "getUsageSummary": (()=>getUsageSummary),
     "parseStringify": (()=>parseStringify)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/clsx/dist/clsx.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$tailwind$2d$merge$2f$dist$2f$bundle$2d$mjs$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/tailwind-merge/dist/bundle-mjs.mjs [app-client] (ecmascript)");
 ;
 ;
 function cn(...inputs) {
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$tailwind$2d$merge$2f$dist$2f$bundle$2d$mjs$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["twMerge"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["clsx"])(inputs));
 }
-const parseStringify = (value)=>{
-    return JSON.parse(JSON.stringify(value));
+const parseStringify = (value)=>JSON.parse(JSON.stringify(value));
+const convertFileToUrl = (file)=>URL.createObjectURL(file);
+const convertFileSize = (sizeInBytes, digits)=>{
+    if (sizeInBytes < 1024) {
+        return sizeInBytes + " Bytes"; // Less than 1 KB, show in Bytes
+    } else if (sizeInBytes < 1024 * 1024) {
+        const sizeInKB = sizeInBytes / 1024;
+        return sizeInKB.toFixed(digits || 1) + " KB"; // Less than 1 MB, show in KB
+    } else if (sizeInBytes < 1024 * 1024 * 1024) {
+        const sizeInMB = sizeInBytes / (1024 * 1024);
+        return sizeInMB.toFixed(digits || 1) + " MB"; // Less than 1 GB, show in MB
+    } else {
+        const sizeInGB = sizeInBytes / (1024 * 1024 * 1024);
+        return sizeInGB.toFixed(digits || 2) + " GB"; // 1 GB or more, show in GB
+    }
+};
+const calculateAngle = (sizeInBytes)=>{
+    const totalSizeInBytes = 2 * 1024 * 1024 * 1024; // 2GB in bytes
+    const percentage = sizeInBytes / totalSizeInBytes * 360;
+    return Number(percentage.toFixed(2));
+};
+const calculatePercentage = (sizeInBytes)=>{
+    const totalSizeInBytes = 2 * 1024 * 1024 * 1024; // 2GB in bytes
+    const percentage = sizeInBytes / totalSizeInBytes * 100;
+    return Number(percentage.toFixed(1));
+};
+const getFileType = (fileName)=>{
+    const extension = fileName.split(".").pop()?.toLowerCase();
+    if (!extension) return {
+        type: "other",
+        extension: ""
+    };
+    const documentExtensions = [
+        "pdf",
+        "doc",
+        "docx",
+        "txt",
+        "xls",
+        "xlsx",
+        "csv",
+        "rtf",
+        "ods",
+        "ppt",
+        "odp",
+        "md",
+        "html",
+        "htm",
+        "epub",
+        "pages",
+        "fig",
+        "psd",
+        "ai",
+        "indd",
+        "xd",
+        "sketch",
+        "afdesign",
+        "afphoto",
+        "afphoto"
+    ];
+    const imageExtensions = [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif",
+        "bmp",
+        "svg",
+        "webp"
+    ];
+    const videoExtensions = [
+        "mp4",
+        "avi",
+        "mov",
+        "mkv",
+        "webm"
+    ];
+    const audioExtensions = [
+        "mp3",
+        "wav",
+        "ogg",
+        "flac"
+    ];
+    if (documentExtensions.includes(extension)) return {
+        type: "document",
+        extension
+    };
+    if (imageExtensions.includes(extension)) return {
+        type: "image",
+        extension
+    };
+    if (videoExtensions.includes(extension)) return {
+        type: "video",
+        extension
+    };
+    if (audioExtensions.includes(extension)) return {
+        type: "audio",
+        extension
+    };
+    return {
+        type: "other",
+        extension
+    };
+};
+const formatDateTime = (isoString)=>{
+    if (!isoString) return "—";
+    const date = new Date(isoString);
+    // Get hours and adjust for 12-hour format
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+    const period = hours >= 12 ? "pm" : "am";
+    // Convert hours to 12-hour format
+    hours = hours % 12 || 12;
+    // Format the time and date parts
+    const time = `${hours}:${minutes.toString().padStart(2, "0")}${period}`;
+    const day = date.getDate();
+    const monthNames = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ];
+    const month = monthNames[date.getMonth()];
+    return `${time}, ${day} ${month}`;
+};
+const getFileIcon = (extension, type)=>{
+    switch(extension){
+        // Document
+        case "pdf":
+            return "/assets/icons/file-pdf.svg";
+        case "doc":
+            return "/assets/icons/file-doc.svg";
+        case "docx":
+            return "/assets/icons/file-docx.svg";
+        case "csv":
+            return "/assets/icons/file-csv.svg";
+        case "txt":
+            return "/assets/icons/file-txt.svg";
+        case "xls":
+        case "xlsx":
+            return "/assets/icons/file-document.svg";
+        // Image
+        case "svg":
+            return "/assets/icons/file-image.svg";
+        // Video
+        case "mkv":
+        case "mov":
+        case "avi":
+        case "wmv":
+        case "mp4":
+        case "flv":
+        case "webm":
+        case "m4v":
+        case "3gp":
+            return "/assets/icons/file-video.svg";
+        // Audio
+        case "mp3":
+        case "mpeg":
+        case "wav":
+        case "aac":
+        case "flac":
+        case "ogg":
+        case "wma":
+        case "m4a":
+        case "aiff":
+        case "alac":
+            return "/assets/icons/file-audio.svg";
+        default:
+            switch(type){
+                case "image":
+                    return "/assets/icons/file-image.svg";
+                case "document":
+                    return "/assets/icons/file-document.svg";
+                case "video":
+                    return "/assets/icons/file-video.svg";
+                case "audio":
+                    return "/assets/icons/file-audio.svg";
+                default:
+                    return "/assets/icons/file-other.svg";
+            }
+    }
+};
+const constructFileUrl = (bucketFileId)=>{
+    return `${"TURBOPACK compile-time value", "https://fra.cloud.appwrite.io/v1"}/storage/buckets/${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_APPWRITE_BUCKET}/files/${bucketFileId}/view?project=${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_APPWRITE_PROJECT}`;
+};
+const constructDownloadUrl = (bucketFileId)=>{
+    return `${"TURBOPACK compile-time value", "https://fra.cloud.appwrite.io/v1"}/storage/buckets/${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_APPWRITE_BUCKET}/files/${bucketFileId}/download?project=${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_APPWRITE_PROJECT}`;
+};
+const getUsageSummary = (totalSpace)=>{
+    return [
+        {
+            title: "Documents",
+            size: totalSpace.document.size,
+            latestDate: totalSpace.document.latestDate,
+            icon: "/assets/icons/file-document-light.svg",
+            url: "/documents"
+        },
+        {
+            title: "Images",
+            size: totalSpace.image.size,
+            latestDate: totalSpace.image.latestDate,
+            icon: "/assets/icons/file-image-light.svg",
+            url: "/images"
+        },
+        {
+            title: "Media",
+            size: totalSpace.video.size + totalSpace.audio.size,
+            latestDate: totalSpace.video.latestDate > totalSpace.audio.latestDate ? totalSpace.video.latestDate : totalSpace.audio.latestDate,
+            icon: "/assets/icons/file-video-light.svg",
+            url: "/media"
+        },
+        {
+            title: "Others",
+            size: totalSpace.other.size,
+            latestDate: totalSpace.other.latestDate,
+            icon: "/assets/icons/file-other-light.svg",
+            url: "/others"
+        }
+    ];
+};
+const getFileTypesParams = (type)=>{
+    switch(type){
+        case "documents":
+            return [
+                "document"
+            ];
+        case "images":
+            return [
+                "image"
+            ];
+        case "media":
+            return [
+                "video",
+                "audio"
+            ];
+        case "others":
+            return [
+                "other"
+            ];
+        default:
+            return [
+                "document"
+            ];
+    }
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
