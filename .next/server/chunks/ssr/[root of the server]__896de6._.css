@@ -1887,6 +1887,18 @@ body {
   }
 }
 
+.delete-confirmation {
+  text-align: center !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(51 63 78 / var(--tw-text-opacity)) !important;
+}
+
+.delete-file-name {
+  font-weight: 500 !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(234 99 101 / var(--tw-text-opacity)) !important;
+}
+
 .modal-cancel-button {
   height: 52px !important;
   flex: 1 !important;
