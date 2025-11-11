@@ -1,4 +1,6 @@
 {
-  "/(root)/[type]/page": "app/(root)/[type]/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/(root)/page": "app/(root)/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
+  "/(root)/[type]/page": "app/(root)/[type]/page.js"
 }
